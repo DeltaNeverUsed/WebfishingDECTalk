@@ -1,7 +1,7 @@
 [submodule "godot-cpp"]
-	path = godot-cpp
+	path = GDExtension/godot-cpp
 	url = https://github.com/godotengine/godot-cpp
 	branch = 3.x
 [submodule "dectalk"]
-	path = dectalk
+	path = GDExtension/dectalk
 	url = https://github.com/dectalk/dectalk
