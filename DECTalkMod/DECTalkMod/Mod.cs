@@ -15,7 +15,8 @@ public class Mod : IMod
         Interface = modInterface;
         Config = modInterface.ReadConfig<Config>();
         
-        Interface.RegisterScriptMod(new PlayerPatcher());
+        Interface.RegisterScriptMod(new PlayerHUDPatcher());
+        Interface.RegisterScriptMod(new PlayerLabelPatcher());
         Interface.RegisterScriptMod(new SoundManagerPatcher());
 
         LogInformation("Haaii!");

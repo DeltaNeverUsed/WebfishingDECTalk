@@ -167,7 +167,9 @@ public:
             return;
         }
 
-        text = String("[:name p]") + text;
+        text = String("[:name p][:phoneme on]") + text;
+        text = text.replace('{', '[');
+        text = text.replace('}', ']');
 
         Godot::print(
             String(": Speaking: {text}\n").format(
