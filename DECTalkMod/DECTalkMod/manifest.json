@@ -1,0 +1,11 @@
+{
+  "Id": "deltaneverused.dectalk",
+  "AssemblyPath": "DECTalkMod.dll",
+  "PackPath": "DECTalkMod.pck",
+  "Metadata": {
+    "Name": "DECTalk",
+    "Author": "DeltaNeverUsed",
+    "Version": "1.0.0",
+    "Description": "The silly aeiou voice"
+  }
+}

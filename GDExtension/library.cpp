@@ -167,6 +167,8 @@ public:
             return;
         }
 
+        text = String("[:name p]") + text;
+
         Godot::print(
             String(": Speaking: {text}\n").format(
                 Dictionary::make("text", text)));
