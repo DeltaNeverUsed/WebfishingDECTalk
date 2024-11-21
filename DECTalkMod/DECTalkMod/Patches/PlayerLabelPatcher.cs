@@ -26,21 +26,9 @@ public class PlayerLabelPatcher : IScriptMod
             {
                 yield return token;
                 
-                yield return new Token(TokenType.PrVar);
-                yield return new IdentifierToken("voice");
-                yield return new Token(TokenType.OpAssign);
-                
-                foreach (var t in Helpers.GetMain())
-                    yield return t;
-                
-                yield return new Token(TokenType.Period);
-                yield return new IdentifierToken("speak");
-                yield return new Token(TokenType.ParenthesisOpen);
-                yield return new IdentifierToken("text");
-                yield return new Token(TokenType.ParenthesisClose);
-                yield return new Token(TokenType.Newline, 1);
-                
                 foreach (var t in ScriptTokenizer.Tokenize(@"
+var voice = get_node(""/root/deltaneveruseddectalk"").speak(text)
+
 get_parent().get_parent().add_child(voice)
 voice.transform.origin.x = 0
 voice.transform.origin.y = 0
