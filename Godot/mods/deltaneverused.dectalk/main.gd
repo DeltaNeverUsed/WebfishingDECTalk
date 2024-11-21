@@ -15,7 +15,7 @@ func _ready():
 	# And thanks Awesomerly for sending this to me
 	var lib = GDNativeLibrary.new()
 	var cfg = ConfigFile.new()
-	cfg.set_value("entry", "Windows.64", "%LIBRPCPATH%")
+	cfg.set_value("entry", "Windows.64", "%LIBDECTALKPATH%")
 	lib.config_file = cfg
 
 	var script = NativeScript.new()
