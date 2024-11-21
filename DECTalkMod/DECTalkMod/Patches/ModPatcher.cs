@@ -1,11 +1,13 @@
+using System.Reflection;
 using GDWeave.Godot;
+using GDWeave.Godot.Variants;
 using GDWeave.Modding;
 
 namespace DECTalkMod.Patches;
 
 public class ModPatcher : IScriptMod
 {
-    public bool ShouldRun(string path) => path == "res://mods/deltaneverused.dectak/main.gdc";
+    public bool ShouldRun(string path) => path == "res://mods/deltaneverused.dectalk/main.gdc";
 
     public IEnumerable<Token> Modify(string path, IEnumerable<Token> tokens)
     {
