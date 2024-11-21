@@ -4,6 +4,9 @@ A mod that adds [DECTalk](https://en.wikipedia.org/wiki/DECtalk) or better known
 ## Install
 Please install from [Thunderstore](https://thunderstore.io/c/webfishing/p/DeltaNeverUsed/DECTalk)
 
+## Misc
+The GDNative DECTalk part of this should work with other godot projects than WEBFISHING, feel free to rip that part out of this project and use it else where. 
+
 ## Building
 ### DECTalkMod C#
 To build the project, you need to set the `GDWeavePath` environment variable to your game install's GDWeave directory (e.g. `G:\games\steam\steamapps\common\WEBFISHING\GDWeave`). This can also be done in Rider with `File | Settings | Build, Execution, Deployment | Toolset and Build | MSBuild global properties` or with a .user file in Visual Studio.
