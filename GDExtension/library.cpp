@@ -193,6 +193,11 @@ public:
             sample += (float)speechBuffers[i + 1] * 255;
 
             const float s = static_cast<float>(sample) / 32768.0f;
+
+            // Constant up-sampling thing? https://github.com/DeltaNeverUsed/WebfishingDECTalk/issues/1#issue-2676964517
+            playback->push_frame(Vector2(s, s));
+            playback->push_frame(Vector2(s, s));
+            playback->push_frame(Vector2(s, s));
             playback->push_frame(Vector2(s, s));
         }
 

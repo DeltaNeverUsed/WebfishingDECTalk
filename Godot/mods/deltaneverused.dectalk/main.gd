@@ -30,7 +30,7 @@ func speak(text: String):
 	var new = voice_audio.instance()
 	
 	var generator = AudioStreamGenerator.new()
-	generator.mix_rate = 11025
+	generator.mix_rate = 44100
 	generator.buffer_length = 10
 	
 	new.stream = generator;
