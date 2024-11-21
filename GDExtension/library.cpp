@@ -67,6 +67,11 @@ public:
     void _init() {
         instance = this;
 
+        auto versionInfo = static_cast<LPSTR>(malloc(256));
+        TextToSpeechVersion(&versionInfo);
+        Godot::print(versionInfo);
+        delete versionInfo;
+
         // TODO: some how make callback non-static?
         status = TextToSpeechStartupEx(&ttsHandle, WAVE_MAPPER, DO_NOT_USE_AUDIO_DEVICE, callback, 0);
 

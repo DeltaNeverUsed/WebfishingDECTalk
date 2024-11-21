@@ -41,11 +41,11 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/godot-cpp" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/dectalk" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/dectalk/src/dapi/src/api/ttsapi.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/library.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/dectalk/src/dapi/src/api/ttsapi.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/library.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -64,7 +64,7 @@
     "RunOnceActivity.west.config.association.type.startup.service": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "07153d40",
+    "git-widget-placeholder": "517f1391",
     "last_opened_file_path": "/home/sinus/Documents/WebFishingDECTalk/GDExtension/dectalk/dist",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -100,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732095635274</updated>
       <workItem from="1732095636315" duration="10423000" />
-      <workItem from="1732204619171" duration="8000" />
+      <workItem from="1732204619171" duration="3767000" />
     </task>
     <servers />
   </component>
