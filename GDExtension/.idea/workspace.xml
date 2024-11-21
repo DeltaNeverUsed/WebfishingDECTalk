@@ -8,7 +8,7 @@
     <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
-    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="8" type="long" />
+    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="3" type="long" />
   </component>
   <component name="CMakePresetLoader">{
   &quot;useNewFormat&quot;: true
@@ -30,7 +30,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f3fdb25-e0be-498b-94d9-045cd2865cdf" name="Changes" comment="" />
+    <list default="true" id="8f3fdb25-e0be-498b-94d9-045cd2865cdf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../DECTalkMod/DECTalkMod/Mod.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../DECTalkMod/DECTalkMod/Mod.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Godot/lib/libGodotDecTalk.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Godot/lib/libGodotDecTalk.dll" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +65,7 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "RunOnceActivity.west.config.association.type.startup.service": "true",
+    "cf.advertisement.text.has.clang-format": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "517f1391",
@@ -100,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732095635274</updated>
       <workItem from="1732095636315" duration="10423000" />
-      <workItem from="1732204619171" duration="3767000" />
+      <workItem from="1732204619171" duration="11577000" />
     </task>
     <servers />
   </component>

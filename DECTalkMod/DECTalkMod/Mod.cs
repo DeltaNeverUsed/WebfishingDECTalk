@@ -18,19 +18,6 @@ public class Mod : IMod
         Config = modInterface.ReadConfig<Config>();
         
         LogInformation("Haaii!");
-
-#pragma warning disable CA1416
-        var baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Default);
-        
-        var key = baseKey.OpenSubKey(@"SOFTWARE\DECtalk Software\DECtalk\4.99\US", true);
-        if (key == null)
-            key = baseKey.CreateSubKey(@"SOFTWARE\DECtalk Software\DECtalk\4.99\US", true);
-        
-        key.SetValue("MainDict", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)! + @"\dic\dtalk_us.dic");
-        key?.Close();
-        
-        baseKey.Close();
-#pragma warning restore CA1416
         
         Interface.RegisterScriptMod(new ModPatcher());
         Interface.RegisterScriptMod(new PlayerHUDPatcher());

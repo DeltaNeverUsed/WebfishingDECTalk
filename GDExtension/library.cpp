@@ -27,6 +27,8 @@ using namespace godot;
 
 static DecTalk *instance;
 
+HINSTANCE hinstDLL;
+
 class DecTalk : public Node {
     GODOT_CLASS(DecTalk, Node)
     MMRESULT status = 0;
@@ -64,16 +66,50 @@ public:
         }
     }
 
+    std::wstring GetExecutableDirectory() {
+        wchar_t path[512];
+        if (GetModuleFileNameW(hinstDLL, path, MAX_PATH) == 0) {
+            Godot::print("Failed to get executable path!");
+            return L"";
+        }
+
+        Godot::print(path);
+
+        std::wstring fullPath(path);
+        size_t pos = fullPath.find_last_of(L"\\/");
+
+        if (pos != std::wstring::npos) {
+            return fullPath.substr(0, pos);
+        }
+
+        return L"";
+    }
+
+    std::wstring GetCurrentWorkingDirectory() {
+        wchar_t currentDir[512];
+
+        DWORD length = GetCurrentDirectoryW(512, currentDir);
+        if (length == 0) {
+            Godot::print("Failed to get current directory!");
+            return L"";
+        }
+        return std::wstring(currentDir);
+    }
+
     void _init() {
         instance = this;
 
-        auto versionInfo = static_cast<LPSTR>(malloc(256));
+        auto versionInfo = static_cast<LPSTR>(malloc(64));
         TextToSpeechVersion(&versionInfo);
         Godot::print(versionInfo);
-        delete versionInfo;
 
+        const std::wstring currentDir = GetCurrentWorkingDirectory();
+        const std::wstring fullPath = GetExecutableDirectory() + L"\\dic";
+
+        SetCurrentDirectoryW(fullPath.c_str());
         // TODO: some how make callback non-static?
         status = TextToSpeechStartupEx(&ttsHandle, WAVE_MAPPER, DO_NOT_USE_AUDIO_DEVICE, callback, 0);
+        SetCurrentDirectoryW(currentDir.c_str());
 
         switch (status) {
             case MMSYSERR_NODRIVER:
@@ -218,10 +254,10 @@ public:
 
         for (auto &lpSpeechBuffer: lpSpeechBuffers) {
             if (lpSpeechBuffer != nullptr) {
-                delete lpSpeechBuffer->lpData;
-                delete lpSpeechBuffer->lpPhonemeArray;
-                delete lpSpeechBuffer->lpIndexArray;
-                delete lpSpeechBuffer;
+                std::free(lpSpeechBuffer->lpData);
+                std::free(lpSpeechBuffer->lpPhonemeArray);
+                std::free(lpSpeechBuffer->lpIndexArray);
+                std::free(lpSpeechBuffer);
                 lpSpeechBuffer = nullptr;
             }
         }
@@ -242,4 +278,13 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle) {
     register_class<DecTalk>();
 }
 
+BOOL WINAPI DllMain(
+    HINSTANCE hinstDLL_org,  // handle to DLL module
+    DWORD fdwReason,     // reason for calling function
+    LPVOID lpvReserved
+    ) {
+    hinstDLL = hinstDLL_org;
+
+    return TRUE;
+}
 #endif
