@@ -67,6 +67,7 @@ public:
     void _init() {
         instance = this;
 
+        // TODO: some how make callback non-static?
         status = TextToSpeechStartupEx(&ttsHandle, WAVE_MAPPER, DO_NOT_USE_AUDIO_DEVICE, callback, 0);
 
         switch (status) {
@@ -146,13 +147,6 @@ public:
         }
     }
 
-    std::ostream& write_word( std::ostream& outs, u_short value, unsigned size = sizeof( u_short ) )
-    {
-        for (; size; --size, value >>= 8)
-            outs.put( static_cast <char> (value & 0xFF) );
-        return outs;
-    }
-
     void Speak(String text, Variant playback_variant) {
         Object *obj = playback_variant.operator godot::Object *();
         if (obj == nullptr) {
@@ -167,6 +161,8 @@ public:
             return;
         }
 
+        // WEBFISHING Filters out all [ and ] characters, so we need to replace them with { and } then replace them back
+        // I'm assuming they're doing this to prevent users from putting BBCode in their chat messages
         text = String("[:name p][:phoneme on]") + text;
         text = text.replace('{', '[');
         text = text.replace('}', ']');
